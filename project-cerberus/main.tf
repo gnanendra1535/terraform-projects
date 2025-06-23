@@ -11,3 +11,7 @@ resource "aws_instance" "cerberus" {
   ami = var.ami
   instance_type = var.instance_type
 }
+resource "aws_key_pair" "cerberus-key" {
+    key_name = "cerberus"
+    public_key = file(".ssh/cerberus.pub")
+}
